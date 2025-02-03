@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body class="body">
+    <div class="OI">
+    <div class="title" id="title">Bread-Incremental:</div>
+    <script>
+        const textElement = document.getElementById('title');
+        const colors = ['red', 'blue', 'green', 'purple', 'orange'];
+        let colorIndex = 0;  
+function changeColor() {
+  textElement.style.color = colors[colorIndex];
+  colorIndex = (colorIndex + 1) % colors.length;
+}
+setInterval(changeColor, 450);
+    </script>
+    <div class="ASD">
+        <div class="FV">Flour:</div>
+            <div id="flour" style="color: azure;">0</div>
+        <div>Nano-Gram</div>        
+</div>
+<div class="ASE">
+    <div class="FS">Water:</div>
+        <div id="water" style="color: rgb(0, 34, 255);">0</div>
+    <div>Nano-liter</div>
+    <script>
+      
+    </script>
+    
+</div>
+
+<div class="bg1"></div>
+<div class="upg1"></div>
+    <script src="script.js"></script>
+
+    <div class="upg1">
+        <div class="name1">Flour-Value:</div>
+        <div class="cost1" id="cost1">Cost: 10</div>
+        <div class="reward1">R: 1.35x FL</div>
+        <button class="buy1" onclick="nigga1()">buy upgrade</button>
+        <div class="name1">Flour-Value:</div>
+        <div class="cost1" id="cost2">Cost: 250</div>
+        <div class="reward1">R: 1.2x Speed (max: 30)</div>
+        <button class="buy1" onclick="nigga2()">buy upgrade</button>
+
+<script>
+let x = 1;
+let y = 200;
+let fL = 0;
+let interval;
+
+const flid = document.getElementById('flour');
+function INC() {
+if (fL>-1) {
+fL+= x
+flid.innerHTML = fL
+flid.innerText = fL.toFixed(2);
+}};
+
+function starttime() {
+   interval = setInterval(INC, y);
+}
+
+function stoptime() {
+    clearInterval(interval);
+}
+
+
+function nigga2() {
+let vcost2 = document.getElementById('cost2').innerText.split(": ")[1].trim();
+let pvcost2 = parseInt(vcost2);
+
+  if (pvcost2 <= fL && y >= 1) {
+    fL -= pvcost2
+    pvcost2 *= 2
+    y /= 1.193
+    document.getElementById('cost2').innerText = "Cost: " + pvcost2;
+
+    stoptime()
+    starttime()
+
+    };
+};
+let vcost1 = document.getElementById('cost1').innerText.split(": ")[1].trim();
+let pvcost1 = parseInt(vcost1);
+function nigga1() {
+  if (pvcost1 <= fL) {
+    fL -= pvcost1
+    pvcost1 *= 2
+    x *=1.35
+    document.getElementById('cost1').innerText = "Cost: " + pvcost1;
+    }};
+starttime()
+   
+
+</script>

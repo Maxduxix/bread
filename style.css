@@ -1,0 +1,45 @@
+.title {
+    font-size: 26px;
+
+}
+.ASD {
+    display: flex;
+    color: aliceblue;
+    gap: 5px;
+}
+.FV {
+    color: azure;
+}
+body {
+    user-select: none;
+    -webkit-user-drag: none;
+    background-color: black;
+}
+
+.ASE {
+    color: blue;
+    display: flex;
+    gap: 5px;
+}
+.upg1 {
+    display: flex;
+    align-items: center;
+}
+
+.name1 {
+    color: rgb(255, 255, 255);
+    margin: 20px;
+    font-size: 20px;
+}
+.cost1 {
+    color: rgb(23, 98, 163);
+    font-size: 20px;
+}
+.reward1 {
+    margin: 20px;
+    color: aliceblue;
+}
+button:hover {
+    cursor: pointer;
+    background-color: bisque;
+}
