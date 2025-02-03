@@ -29,26 +29,36 @@ setInterval(changeColor, 450);
     <div class="FS">Water:</div>
         <div id="water" style="color: rgb(0, 34, 255);">0</div>
     <div>Nano-liter</div>
-    <script>
-      
-    </script>
-    
 </div>
 
+<div class="Waterahh">
+<button class="wpump" id="wpump" onclick="waterpump()" style="cursor: pointer;"> Click for water (req UPG#3:1)</button>
+</div>
+<div style="color: blue;">water boost flour by ((water/10) + 1)</div>
 <div class="bg1"></div>
-<div class="upg1"></div>
-    <script src="script.js"></script>
 
+    <script src="script.js"></script>
+<div>
     <div class="upg1">
         <div class="name1">Flour-Value:</div>
         <div class="cost1" id="cost1">Cost: 10</div>
-        <div class="reward1">R: 1.35x FL</div>
+        <div class="reward1">R: 1.35x FL (1.8x) (max: Inf)</div>
         <button class="buy1" onclick="nigga1()">buy upgrade</button>
+        
+    </div>
+    <div class="upg1">
         <div class="name1">Flour-Value:</div>
         <div class="cost1" id="cost2">Cost: 250</div>
-        <div class="reward1">R: 1.2x Speed (max: 30)</div>
+        <div class="reward1">R: 1.2x Speed (1.8x) (max: 30)</div>
         <button class="buy1" onclick="nigga2()">buy upgrade</button>
-
+    </div>
+    <div class="upg1">
+        <div class="name1">Water-Value:</div>
+        <div class="cost1" id="cost3">Cost: 2500000</div>
+        <div class="reward1">R: Unlocks water and +1 water (2x) (max: inf)</div>
+        <button class="buy1" onclick="nigga3()">buy upgrade</button>
+    </div>
+</div>
 <script>
 let x = 1;
 let y = 200;
@@ -58,8 +68,7 @@ let interval;
 const flid = document.getElementById('flour');
 function INC() {
 if (fL>-1) {
-fL+= x
-flid.innerHTML = fL
+fL+= x * (wtr/10) +1
 flid.innerText = fL.toFixed(2);
 }};
 
@@ -78,9 +87,9 @@ let pvcost2 = parseInt(vcost2);
 
   if (pvcost2 <= fL && y >= 1) {
     fL -= pvcost2
-    pvcost2 *= 2
+    pvcost2 *= 1.8
     y /= 1.193
-    document.getElementById('cost2').innerText = "Cost: " + pvcost2;
+    document.getElementById('cost2').innerText = "Cost: " + pvcost2.toFixed(1);
 
     stoptime()
     starttime()
@@ -88,15 +97,42 @@ let pvcost2 = parseInt(vcost2);
     };
 };
 let vcost1 = document.getElementById('cost1').innerText.split(": ")[1].trim();
-let pvcost1 = parseInt(vcost1);
+let pvcost1 = parseInt(vcost1)
 function nigga1() {
   if (pvcost1 <= fL) {
     fL -= pvcost1
-    pvcost1 *= 2
-    x *=1.35
-    document.getElementById('cost1').innerText = "Cost: " + pvcost1;
+    pvcost1 *= 1.8
+    x *=1.35 
+    document.getElementById('cost1').innerText = "Cost: " + pvcost1.toFixed(1);
     }};
 starttime()
+
+let vcost3 = document.getElementById('cost3').innerText.split(": ")[1].trim();
+let pvcost3 = parseInt(vcost3)
+let z = 0;
+let wtr = 0;
+
+const wflid = document.getElementById('water');
+function nigga3() {
+    if (pvcost3 <= fL) {
+        fL -= pvcost3
+        pvcost3 *= 2
+        z += 1
+        document.getElementById('cost3').innerText = "Cost: " + pvcost3.toFixed(1);
+    }
+    
+}
+function waterpump() {
+    if (wtr > -1) {
+        wtr += z
+        wflid.innerText = wtr
+    }
+     wflid.innerText = wtr.toFixed(1);
+    }
+
+
+
+
    
 
 </script>
