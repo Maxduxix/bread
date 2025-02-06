@@ -56,7 +56,7 @@ setInterval(changeColor, 450);
         <div class="name1">Flour-Value:</div>
         <div class="cost1" id="cost1">Cost: 10</div>
         <div class="cost1">Flour</div>
-        <div class="reward1">R: 1.35x FL (1.8x) (max: Inf)</div>
+        <div class="reward1">R: 1.35x FL (2.2x) (max: Inf)</div>
         <button class="buy1" onclick="nigga1()">buy upgrade</button>
         
     </div>
@@ -64,14 +64,14 @@ setInterval(changeColor, 450);
         <div class="name1">Time-Manipulation:</div>
         <div class="cost1" id="cost2">Cost: 250</div>
         <div class="cost1">Flour</div>
-        <div class="reward1">R: 1.1x Speed (1.8x) (FL) (max: 50)</div>
+        <div class="reward1">R: 1.1x Speed (2x) (FL) (max: 50)</div>
         <button class="buy1" onclick="nigga2()">buy upgrade</button>
     </div>
     <div class="upg1">
         <div class="name1">Water-Value:</div>
         <div class="cost1" id="cost3">Cost: 2500</div>
         <div class="cost1">Flour</div>
-        <div class="reward1">R: 1.5x water (2.5x) (max: inf)</div>
+        <div class="reward1">R: 1.5x water (5x) (max: inf)</div>
         <button class="buy1" onclick="nigga3()">buy upgrade</button>
     </div>
     <div class="upg1">
@@ -113,8 +113,8 @@ const lvl = document.getElementById('level');
 function reqinc() {
     if (pex >= reqval) {
         pex -= reqval
-        reqval *=1.2
-        x *= 1.2
+        reqval *=1.16
+        x *= 1.5
         lvalue += 1
         lvl.innerText = lvalue.toFixed(0);
         req.innerText = reqval.toFixed(0);
@@ -148,7 +148,7 @@ let pvcost2 = parseInt(vcost2);
 
   if (pvcost2 <= fL && y >= 1) {
     fL -= pvcost2
-    pvcost2 *= 1.8;
+    pvcost2 *= 2.2;
     document.getElementById('cost2').innerText = "Cost: " + pvcost2.toFixed(1);
     y = y / 1.1;
     restarttime()
@@ -160,7 +160,7 @@ let pvcost1 = parseInt(vcost1)
 function nigga1() {
   if (pvcost1 <= fL) {
     fL -= pvcost1
-    pvcost1 *= 1.8;
+    pvcost1 *= 2;
     x *=1.35 
     document.getElementById('cost1').innerText = "Cost: " + pvcost1.toFixed(1);
     }};
@@ -175,7 +175,7 @@ const wflid = document.getElementById('water');
 function nigga3() {
     if (pvcost3 <= fL) {
         fL -= pvcost3
-        pvcost3 *= 8
+        pvcost3 *= 5
         z *= 1.5
         document.getElementById('cost3').innerText = "Cost: " + pvcost3.toFixed(1);
       
