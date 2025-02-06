@@ -51,6 +51,7 @@ button:hover {
 .Level {
     color: rgb(170, 0, 255);
     display: flex;
+    gap: 5px;
 }
 .lahh {
     display: flex;
