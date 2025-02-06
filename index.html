@@ -29,6 +29,7 @@ setInterval(changeColor, 450);
         <div class="slash">/</div>
         <div id="req">100</div>
         <div class="s2">)</div>
+        <div>LVL boost Flour by 1.25x (1.25x)</div>
     </div>        
 </div>
 
@@ -46,7 +47,7 @@ setInterval(changeColor, 450);
 <div class="Waterahh">
 <button class="wpump" id="wpump" onclick="waterpump()" style="cursor: pointer;"> Click to pump water</button>
 </div>
-<div style="color: blue;">water boost flour by ((water+20)20)(macro is not allowed)</div>
+<div style="color: blue;">water boost flour by ((water+25)25)(macro is not allowed)</div>
 <div class="bg1"></div>
 
 
@@ -56,7 +57,7 @@ setInterval(changeColor, 450);
         <div class="name1">Flour-Value:</div>
         <div class="cost1" id="cost1">Cost: 10</div>
         <div class="cost1">Flour</div>
-        <div class="reward1">R: 1.35x FL (2.5x) (max: Inf)</div>
+        <div class="reward1">R: 1.35x FL (2.8x) (max: Inf)</div>
         <button class="buy1" onclick="nigga1()">buy upgrade</button>
         
     </div>
@@ -64,21 +65,21 @@ setInterval(changeColor, 450);
         <div class="name1">Time-Manipulation:</div>
         <div class="cost1" id="cost2">Cost: 250</div>
         <div class="cost1">Flour</div>
-        <div class="reward1">R: 1.1x Speed (3x) (FL) (max: 50)</div>
+        <div class="reward1">R: 1.1x Speed (3.2x) (FL) (max: 50)</div>
         <button class="buy1" onclick="nigga2()">buy upgrade</button>
     </div>
     <div class="upg1">
         <div class="name1">Water-Value:</div>
         <div class="cost1" id="cost3">Cost: 2500</div>
         <div class="cost1">Flour</div>
-        <div class="reward1">R: 1.4x water (8.5x) (max: inf)</div>
+        <div class="reward1">R: 1.4x water (6x) (max: inf)</div>
         <button class="buy1" onclick="nigga3()">buy upgrade</button>
     </div>
     <div class="upg1">
         <div class="name1">Exp-Value:</div>
         <div class="cost1" id="cost4">Cost: 500</div>
         <div class="cost1">Flour</div>
-        <div class="reward1">R: 1.2x exp (5x) (max: inf)</div>
+        <div class="reward1">R: 1.1x exp (5x) (max: inf)</div>
         <button class="buy1" onclick="nigga4()">buy upgrade</button>
     </div>
 <div class="p" style="color:rgb(139, 0, 63) ;">Goal: Reach Flour: e30</div>
@@ -91,7 +92,7 @@ const flid = document.getElementById('flour');
 
 function INC() {
 if (fL>-1) {
-fL+= x * ((wtr+20)/20)
+fL+= x * ((wtr+25)/25)
 flid.innerText = fL.toFixed(2);
 }};
 
@@ -113,8 +114,8 @@ const lvl = document.getElementById('level');
 function reqinc() {
     if (pex >= reqval) {
         pex -= reqval
-        reqval *=1.28
-        x *= 1.5
+        reqval *=1.25
+        x *= 1.25
         lvalue += 1
         lvl.innerText = lvalue.toFixed(0);
         req.innerText = reqval.toFixed(0);
@@ -132,7 +133,7 @@ function starttime() {
 }
 
 setInterval (reqinc, 10)
-setInterval(EXPINC, 100);
+setInterval(EXPINC, 150);
 function stoptime() {
     clearInterval(interval);
 }
@@ -148,7 +149,7 @@ let pvcost2 = parseInt(vcost2);
 
   if (pvcost2 <= fL && y >= 2) {
     fL -= pvcost2
-    pvcost2 *= 3;
+    pvcost2 *= 3.2;
     document.getElementById('cost2').innerText = "Cost: " + pvcost2.toFixed(1);
     y = y / 1.1;
     restarttime()
@@ -160,7 +161,7 @@ let pvcost1 = parseInt(vcost1)
 function nigga1() {
   if (pvcost1 <= fL) {
     fL -= pvcost1
-    pvcost1 *= 2.5;
+    pvcost1 *= 2.8;
     x *=1.35 
     document.getElementById('cost1').innerText = "Cost: " + pvcost1.toFixed(1);
     }};
@@ -175,7 +176,7 @@ const wflid = document.getElementById('water');
 function nigga3() {
     if (pvcost3 <= fL) {
         fL -= pvcost3
-        pvcost3 *= 8.5
+        pvcost3 *= 6
         z *= 1.4
         document.getElementById('cost3').innerText = "Cost: " + pvcost3.toFixed(1);
       
@@ -189,7 +190,7 @@ function nigga3() {
     if (pvcost4 <= fL) {
         fL -= pvcost4
         pvcost4 *= 5
-        u *=1.2
+        u *=1.1
         document.getElementById('cost4').innerText = "Cost: " + pvcost4.toFixed(1);
     }
 }
