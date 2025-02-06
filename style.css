@@ -43,3 +43,17 @@ button:hover {
     cursor: pointer;
     background-color: bisque;
 }
+.waterahh {
+    color: rgb(0, 0, 255);
+    display: flex;
+    margin: 5px;
+}
+.Level {
+    color: rgb(170, 0, 255);
+    display: flex;
+}
+.lahh {
+    display: flex;
+    gap: 8px;
+    font-size: 19px;
+}
