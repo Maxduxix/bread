@@ -58,3 +58,11 @@ button:hover {
     gap: 8px;
     font-size: 19px;
 }
+.pres {
+    text-align: center;
+    align-self: center;
+    font-size: 18px;
+    width: 150px;
+    height: 30px;
+    margin: 10px;
+}
