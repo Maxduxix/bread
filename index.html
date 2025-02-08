@@ -9,7 +9,7 @@
 </head>
 <body class="body">
     <div class="OI">
-    <div class="title" id="title">Bread-Incremental: v0.1</div>
+    <div class="title" id="title">Bread-Incremental: v0.1a</div>
     <script>
         const textElement = document.getElementById('title');
         const colors = ['red', 'blue', 'green', 'purple', 'orange'];
@@ -34,6 +34,8 @@ setInterval(changeColor, 450);
         <div id="boost">1</div>
         <div>x</div>
         <div>)</div>
+        <div id="b1">0</div>
+        <div>x</div>
     </div>        
 </div>
 
@@ -51,7 +53,11 @@ setInterval(changeColor, 450);
 <div class="Waterahh">
 <button class="wpump" id="wpump" onclick="waterpump()" style="cursor: pointer;"> Click to pump water</button>
 </div>
-<div style="color: blue;">water boost flour by (sqrt((water+10/5))) (macro is not allowed) </div>
+<div class="WBG">
+<div>water boost flour by (sqrt((water+5/2)))</div>
+<div id="b2">0</div>
+<div>x</div>
+</div>
 <div class="bg1"></div>
 
 
@@ -61,7 +67,7 @@ setInterval(changeColor, 450);
         <div class="name1">Flour-Value:</div>
         <div class="cost1" id="cost1">Cost: 100</div>
         <div class="cost1">Flour</div>
-        <div class="reward1">R: +100% FL (2x each 25th upg) (1.5x)</div>
+        <div class="reward1">R: +100% FL (3x each 25th upg) (1.5x)</div>
         <div id="pcrs1" style="color: aliceblue;">0</div>
         <div style="color: aliceblue;">/</div>
         <div style="color: aliceblue;">500</div>
@@ -110,23 +116,27 @@ let ea = 25;
 let w1 = 0;
 let wa = 25;
 let s1 = 0;
-let fL = 1;
+let fL = 0;
 let interval;
 const flid = document.getElementById('flour');
 
 function INC() {
 if (fL>-1) {
-fL+= x * (Math.sqrt(((wtr+10)/5))) *(Math.pow(1,1.5))
+fL+= (x * (Math.sqrt(((wtr+3)/2))) *(Math.pow(n,1.5)) *(x1+1))
 flid.innerText = fL.toFixed(2);
+b1.innerText = (u*  (Math.log2((fL+10))/2)).toFixed(1);
+b2.innerText = (Math.sqrt(((wtr+3)/2))).toFixed(2);
 }};
 
 let pex =0;
-let u = 0.075;
+let u = 0.1;
 const exp = document.getElementById('exp');
+const b1 = document.getElementById('b1');
+const b2 = document.getElementById('b2')
 
 function EXPINC() {
 if (pex>-1) {
-pex+= u* (Math.log2((fL+10))/2)
+pex+= u* (Math.log2((fL+10))/2)*(e1+1)
 exp.innerText = pex.toFixed(1);
 }};
 
@@ -192,12 +202,11 @@ function nigga1() {
   if (pvcost1 <= fL && x1 < 500) {
     fL -= pvcost1
     pvcost1 *= 1.5;
-    x +=1
     x1 +=1
     document.getElementById('pcrs1').innerText = x1
     document.getElementById('cost1').innerText = "Cost: " + pvcost1.toFixed(1);
     if (x1 >= xa) {
-    x *=20000
+    x *=3
     xa +=25
     
   }
@@ -217,7 +226,6 @@ function nigga3() {
     if (pvcost3 <= fL && w1 < 100) {
         fL -= pvcost3
         pvcost3 *= 1.8
-        z +=0.12
         w1 +=1
         document.getElementById('cost3').innerText = "Cost: " + pvcost3.toFixed(1);
         document.getElementById('pcrs3').innerText = w1
@@ -234,7 +242,6 @@ function nigga3() {
         fL -= pvcost4
         pvcost4 *= 1.5
         e1 +=1
-        u +=0.075
         document.getElementById('cost4').innerText = "Cost: " + pvcost4.toFixed(1);
         document.getElementById('pcrs4').innerText = e1
         if (e1 >= ea) {
@@ -246,13 +253,13 @@ function nigga3() {
 }
 function waterpump(button) {
     if (wtr > -1) {
-        wtr += z
+        wtr += (z* ((w1+2)/2))
         wflid.innerText = wtr
     }
      wflid.innerText = wtr.toFixed(2);
     }
 
-    let x = 1;
+    let x = 0.75;
 
 
 </script>
