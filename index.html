@@ -29,7 +29,11 @@ setInterval(changeColor, 450);
         <div class="slash">/</div>
         <div id="req">100</div>
         <div class="s2">)</div>
-        <div>LVL boost Flour by 1.25x (1.x)(Flour boost exp by (log2 [(fl+10)/2)])</div>
+        <div>LVL boost Flour by 1.25x (1.x)(log2 [(fl+10)/2)]</div>
+        <div>(</div>
+        <div id="boost">1</div>
+        <div>x</div>
+        <div>)</div>
     </div>        
 </div>
 
@@ -57,7 +61,7 @@ setInterval(changeColor, 450);
         <div class="name1">Flour-Value:</div>
         <div class="cost1" id="cost1">Cost: 100</div>
         <div class="cost1">Flour</div>
-        <div class="reward1">R: +100% FL (2x each 15th upg) (1.4x)</div>
+        <div class="reward1">R: +100% FL (2x each 25th upg) (1.5x)</div>
         <div id="pcrs1" style="color: aliceblue;">0</div>
         <div style="color: aliceblue;">/</div>
         <div style="color: aliceblue;">500</div>
@@ -78,7 +82,7 @@ setInterval(changeColor, 450);
         <div class="name1">Water-Value:</div>
         <div class="cost1" id="cost3">Cost: 2500</div>
         <div class="cost1">Flour</div>
-        <div class="reward1">R: +50% water (2x each 15th upg) (1.8x)</div>
+        <div class="reward1">R: +50% water (2x each 25th upg) (1.8x)</div>
         <div id="pcrs3" style="color: aliceblue;">0</div>
         <div style="color: aliceblue;">/</div>
         <div style="color: aliceblue;">100</div>
@@ -88,7 +92,7 @@ setInterval(changeColor, 450);
         <div class="name1">Exp-Value:</div>
         <div class="cost1" id="cost4">Cost: 500</div>
         <div class="cost1">Flour</div>
-        <div class="reward1">R: +100% exp (2x each 15th upg) (1.5x)</div>
+        <div class="reward1">R: +100% exp (2x each 25th upg) (1.5x)</div>
         <div id="pcrs4" style="color: aliceblue;">0</div>
         <div style="color: aliceblue;">/</div>
         <div style="color: aliceblue;">500</div>
@@ -98,15 +102,14 @@ setInterval(changeColor, 450);
 <button class="pres" id="pres"> Prestige for: 0</button>
 </div>
 <script>
-let x = 1;
+
 let x1 = 0;
-let xa = 15;
+let xa = 25;
 let e1 = 0;
-let ea = 15;
+let ea = 25;
 let w1 = 0;
-let wa = 15;
+let wa = 25;
 let s1 = 0;
-let sa = 15;
 let fL = 0;
 let interval;
 const flid = document.getElementById('flour');
@@ -129,17 +132,21 @@ exp.innerText = pex.toFixed(1);
 
 let lvalue = 0;
 let reqval = 100;
+let n = 1;
 const req= document.getElementById('req');
 const lvl = document.getElementById('level');
+const boost = document.getElementById('boost');
 
 function reqinc() {
     if (pex >= reqval) {
         pex -= reqval
-        reqval *=1.18
-        x *= 1.25
+        reqval *=1.23
+        x *= (Math.pow(n,1.3))
+        n +=1
         lvalue += 1
         lvl.innerText = lvalue.toFixed(0);
         req.innerText = reqval.toFixed(0);
+        boost.innerText = (Math.pow(n,1.3)).toFixed(1);
         
        
     };
@@ -184,14 +191,14 @@ let pvcost1 = parseInt(vcost1)
 function nigga1() {
   if (pvcost1 <= fL && x1 < 500) {
     fL -= pvcost1
-    pvcost1 *= 1.4;
+    pvcost1 *= 1.5;
     x +=1
     x1 +=1
     document.getElementById('pcrs1').innerText = x1
     document.getElementById('cost1').innerText = "Cost: " + pvcost1.toFixed(1);
     if (x1 >= xa) {
     x *=20000
-    xa +=15
+    xa +=25
     
   }
 
@@ -216,7 +223,7 @@ function nigga3() {
         document.getElementById('pcrs3').innerText = w1
         if (w1 >= wa) {
     z *=2
-    wa +=15
+    wa +=25
     }}};
 
     let vcost4 = document.getElementById('cost4').innerText.split(": ")[1].trim();
@@ -232,7 +239,7 @@ function nigga3() {
         document.getElementById('pcrs4').innerText = e1
         if (e1 >= ea) {
     u *=2
-    ea +=15
+    ea +=25
   }
 
     }
@@ -244,6 +251,8 @@ function waterpump(button) {
     }
      wflid.innerText = wtr.toFixed(2);
     }
+
+    let x = 1;
 
 
 </script>
