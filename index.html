@@ -29,7 +29,7 @@ setInterval(changeColor, 450);
         <div class="slash">/</div>
         <div id="req">100</div>
         <div class="s2">)</div>
-        <div>LVL boost Flour by 1.25x (1.x)(log2 [(fl+10)/2)]</div>
+        <div>LVL boost Flour by lvl^1.5 (1.23x) (log2 [(fl+10)/2)]</div>
         <div>(</div>
         <div id="boost">1</div>
         <div>x</div>
@@ -110,17 +110,17 @@ let ea = 25;
 let w1 = 0;
 let wa = 25;
 let s1 = 0;
-let fL = 0;
+let fL = 1;
 let interval;
 const flid = document.getElementById('flour');
 
 function INC() {
 if (fL>-1) {
-fL+= x * (Math.sqrt(((wtr+10)/5)));
+fL+= x * (Math.sqrt(((wtr+10)/5))) *(Math.pow(1,1.5))
 flid.innerText = fL.toFixed(2);
 }};
 
-let pex = 0;
+let pex =0;
 let u = 0.075;
 const exp = document.getElementById('exp');
 
@@ -137,16 +137,16 @@ const req= document.getElementById('req');
 const lvl = document.getElementById('level');
 const boost = document.getElementById('boost');
 
+
 function reqinc() {
     if (pex >= reqval) {
         pex -= reqval
         reqval *=1.23
-        x *= (Math.pow(n,1.3))
         n +=1
         lvalue += 1
         lvl.innerText = lvalue.toFixed(0);
         req.innerText = reqval.toFixed(0);
-        boost.innerText = (Math.pow(n,1.3)).toFixed(1);
+        boost.innerText = (Math.pow(n,1.5)).toFixed(1);
         
        
     };
