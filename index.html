@@ -9,7 +9,7 @@
 </head>
 <body class="body">
     <div class="OI">
-    <div class="title" id="title">Bread-Incremental: v0.1a</div>
+    <div class="title" id="title">Bread-Incremental: v0.1</div>
     <script>
         const textElement = document.getElementById('title');
         const colors = ['red', 'blue', 'green', 'purple', 'orange'];
@@ -41,18 +41,34 @@ setInterval(changeColor, 450);
 
     <div class="ASD">
         <div class="FV">Flour:</div>
-            <div id="flour" style="color: azure;">0</div>
-        <div style="color: aliceblue;">Nano-Gram</div>        
+            <div id="flour" style="color: rgb(99, 108, 108);">0</div>
+        <div style="color: rgb(255, 255, 255);">Nano-Gram</div>        
 </div>
 <div class="ASE">
     <div class="FS">Water:</div>
-        <div id="water" style="color: rgb(0, 34, 255);">0</div>
+        <div id="water" style="color: rgb(61, 75, 166);">0</div>
     <div>Nano-liter</div>
+    
+<div class="Waterahh">
+    <button class="wpump" id="wpump" onclick="waterpump()" style="cursor: pointer;"> Click to pump water</button>
+    </div>
+</div>
+<div class="ADE">
+    <div class="FS">Sugar:</div>
+        <div id="Sugar" style="color: rgb(134, 122, 103);">0</div>
+    <div>Nano-Grams</div>
+</div>
+<div class="AZE">
+    <div class="FS">Salt:</div>
+        <div id="salt" style="color: rgb(255, 0, 0);">0</div>
+    <div>Nano-Grams</div>
+</div>
+<div class="APE">
+    <div class="FS">Fermentation-Points:</div>
+        <div id="salt" style="color: rgb(0, 255, 166);">0</div>
+    <div>Unit</div>
 </div>
 
-<div class="Waterahh">
-<button class="wpump" id="wpump" onclick="waterpump()" style="cursor: pointer;"> Click to pump water</button>
-</div>
 <div class="WBG">
 <div>water boost flour by (sqrt((water+5/2)))</div>
 <div id="b2">0</div>
@@ -62,6 +78,7 @@ setInterval(changeColor, 450);
 
 
     <script src="script.js"></script>
+    <div class="p" style="color:rgb(139, 0, 63);">Flour Upgrades</div>
 <div>
     <div class="upg1">
         <div class="name1">Flour-Value:</div>
@@ -70,7 +87,7 @@ setInterval(changeColor, 450);
         <div class="reward1">R: +100% FL (3x each 25th upg) (1.5x)</div>
         <div id="pcrs1" style="color: aliceblue;">0</div>
         <div style="color: aliceblue;">/</div>
-        <div style="color: aliceblue;">500</div>
+        <div style="color: aliceblue;">1000</div>
         <button class="buy1" onclick="nigga1()" style="margin: 11px;">buy upgrade</button>
         
     </div>
@@ -91,7 +108,7 @@ setInterval(changeColor, 450);
         <div class="reward1">R: +50% water (2x each 25th upg) (1.8x)</div>
         <div id="pcrs3" style="color: aliceblue;">0</div>
         <div style="color: aliceblue;">/</div>
-        <div style="color: aliceblue;">100</div>
+        <div style="color: aliceblue;">200</div>
         <button class="buy1" onclick="nigga3()"style="margin: 11px;">buy upgrade</button>
     </div>
     <div class="upg1">
@@ -101,63 +118,151 @@ setInterval(changeColor, 450);
         <div class="reward1">R: +100% exp (2x each 25th upg) (1.5x)</div>
         <div id="pcrs4" style="color: aliceblue;">0</div>
         <div style="color: aliceblue;">/</div>
-        <div style="color: aliceblue;">500</div>
+        <div style="color: aliceblue;">1000</div>
         <button class="buy1" onclick="nigga4()"style="margin: 11px;">buy upgrade</button>
     </div>
-<div class="p" style="color:rgb(139, 0, 63) ;">Goal: Reach Flour: e30</div>
-<button class="pres" id="pres"> Prestige for: 0</button>
+<div class="p" style="color:rgb(139, 0, 63) ;">Sugar Upgrades</div>
+<div class="upg1">
+    <div class="name1">Sugar-Flour-Value:</div>
+    <div class="cost1" id="cost5">Cost: 1</div>
+    <div class="cost1">Sugar</div>
+    <div class="reward1">R: +50% Flour (2x each 25th upg) (1x)</div>
+    <div id="pcrs5" style="color: aliceblue;">0</div>
+    <div style="color: aliceblue;">/</div>
+    <div style="color: aliceblue;">50</div>
+    <button class="buy1" onclick="nigga5()"style="margin: 11px;">buy upgrade</button>
+</div>
+<div class="upg1">
+    <div class="name1">Sugar-Exp-Value:</div>
+    <div class="cost1" id="cost6">Cost: 2</div>
+    <div class="cost1">Sugar</div>
+    <div class="reward1">R: +50% Exp (2x each 25th upg) (1x)</div>
+    <div id="pcrs6" style="color: aliceblue;">0</div>
+    <div style="color: aliceblue;">/</div>
+    <div style="color: aliceblue;">50</div>
+    <button class="buy1" onclick="nigga6()"style="margin: 11px;">buy upgrade</button>
+</div>
+<div></div>
+<button class="salt" onclick="Salt()">Salt-ify (Req lvl 45): <div id="saltpend">0</div></button>
+<div class="p" style="color:rgb(139, 0, 63) ;">Salt Upgrades</div>
+<div class="upg1">
+    <div class="name1">Salt-Water-Value:</div>
+    <div class="cost1" id="cost1a">Cost: 25</div>
+    <div class="cost1">Salt</div>
+    <div class="reward1">R: +50% Water (2x each 25th upg) (1.5x)</div>
+    <div id="pcrs1a" style="color: aliceblue;">0</div>
+    <div style="color: aliceblue;">/</div>
+    <div style="color: aliceblue;">250</div>
+    <button class="buy1" onclick="nigga1A()"style="margin: 11px;">buy upgrade</button>
+</div>
+<div class="upg1">
+    <div class="name1">Salt-Exp-Value:</div>
+    <div class="cost1" id="cost2a">Cost: 25</div>
+    <div class="cost1">Salt</div>
+    <div class="reward1">R: +50% Exp (2x each 25th upg) (1.5x)</div>
+    <div id="pcrs2a" style="color: aliceblue;">0</div>
+    <div style="color: aliceblue;">/</div>
+    <div style="color: aliceblue;">250</div>
+    <button class="buy1" onclick="nigga2A()"style="margin: 11px;">buy upgrade</button>
+</div>
+<div class="upg1">
+    <div class="name1">Salt-Sugar-Value:</div>
+    <div class="cost1" id="cost3a">Cost: 250</div>
+    <div class="cost1">Salt</div>
+    <div class="reward1">R: +25% Sugar (2x each 25th upg) (1.8x)</div>
+    <div id="pcrs3a" style="color: aliceblue;">0</div>
+    <div style="color: aliceblue;">/</div>
+    <div style="color: aliceblue;">50</div>
+    <button class="buy1" onclick="nigga3A()"style="margin: 11px;">buy upgrade</button>
+</div>
+<div class="upg1">
+    <div class="name1">Salt-Time-Manipulation:</div>
+    <div class="cost1" id="cost4a">Cost: 850</div>
+    <div class="cost1">Salt</div>
+    <div class="reward1">R: 1.2x Time (5x)</div>
+    <div id="pcrs4a" style="color: aliceblue;">0</div>
+    <div style="color: aliceblue;">/</div>
+    <div style="color: aliceblue;">10</div>
+    <button class="buy1" onclick="nigga4A()"style="margin: 11px;">buy upgrade</button>
+</div>
+<div class="upg1">
+    <div class="name1">Mixer:</div>
+    <div class="cost1" id="cost5a">Cost: 10000</div>
+    <div class="cost1">Salt</div>
+    <div class="reward1">R: Unlocks Mixer, 2x FRP (2x each 25th upg) (10x)</div>
+    <div id="pcrs5a" style="color: aliceblue;">0</div>
+    <div style="color: aliceblue;">/</div>
+    <div style="color: aliceblue;">50</div>
+    <button class="buy1" onclick="nigga5A()"style="margin: 11px;">buy upgrade</button>
+</div>
 </div>
 <script>
-
+let xz = 1
+let uz = 1
+let zz = 1
+let x = 0.75;
+let z = 0.25;
+let u = 0.075;
+let sv = 0;
 let x1 = 0;
 let xa = 25;
 let e1 = 0;
 let ea = 25;
 let w1 = 0;
 let wa = 25;
-let s1 = 0;
+let y1 = 0;
 let fL = 0;
 let interval;
 const flid = document.getElementById('flour');
 
 function INC() {
 if (fL>-1) {
-fL+= (x * (Math.sqrt(((wtr+3)/2))) *(Math.pow(n,1.5)) *(x1+1))
+fL+= (x * (Math.sqrt(((wtr+3)/2))) *(Math.pow(n,1.5)) *(x1+1)*((s1+2)/2)*(xz))
 flid.innerText = fL.toFixed(2);
-b1.innerText = (u*  (Math.log2((fL+10))/2)).toFixed(1);
-b2.innerText = (Math.sqrt(((wtr+3)/2))).toFixed(2);
+
 }};
 
 let pex =0;
-let u = 0.1;
 const exp = document.getElementById('exp');
 const b1 = document.getElementById('b1');
 const b2 = document.getElementById('b2')
 
 function EXPINC() {
 if (pex>-1) {
-pex+= u* (Math.log2((fL+10))/2)*(e1+1)
+pex+= u* (Math.log2((fL+10))/2)*(e1+1)*(((s2+2)/2))*(uz)*((su2+2)/2)*(sz2)
 exp.innerText = pex.toFixed(1);
+b2.innerText = (Math.sqrt(((wtr+3)/2))).toFixed(2);
+sugar.innerText = sval;
+saltpend.innerText = (sv+1)*Math.pow((lvalue/4),2).toFixed(2);
+salt.innerText = saltval;
+b1.innerText = pex.toFixed(3);
+boost.innerText = (Math.pow(n,1.5)).toFixed(2);
 }};
 
 let lvalue = 0;
 let reqval = 100;
 let n = 1;
+let sval = 0;
 const req= document.getElementById('req');
 const lvl = document.getElementById('level');
 const boost = document.getElementById('boost');
+const sugar = document.getElementById('Sugar');
 
 
 function reqinc() {
     if (pex >= reqval) {
         pex -= reqval
         reqval *=1.23
+        sval +=1*((su3+4)/4)*((sz3+1)/2)
         n +=1
         lvalue += 1
         lvl.innerText = lvalue.toFixed(0);
         req.innerText = reqval.toFixed(0);
-        boost.innerText = (Math.pow(n,1.5)).toFixed(1);
-        
+       
+       
+       
+
+
        
     };
 };
@@ -170,7 +275,7 @@ function starttime() {
     interval = setInterval(INC, y);
 }
 
-setInterval (reqinc, 10)
+setInterval (reqinc, 5)
 setInterval(EXPINC, 150);
 function stoptime() {
     clearInterval(interval);
@@ -185,13 +290,13 @@ function nigga2() {
 let vcost2 = document.getElementById('cost2').innerText.split(": ")[1].trim();
 let pvcost2 = parseInt(vcost2);
 
-  if (pvcost2 <= fL && y >= 2 && s1 <30 ) {
+  if (pvcost2 <= fL && y >= 2 && y1 <30 ) {
     fL -= pvcost2
     pvcost2 *= 3.2;
     document.getElementById('cost2').innerText = "Cost: " + pvcost2.toFixed(1);
     y = y / 1.1;
-    s1 +=1
-    document.getElementById('pcrs2').innerText = s1
+    y1 +=1
+    document.getElementById('pcrs2').innerText = y1
     restarttime()
 
     }
@@ -199,14 +304,14 @@ let pvcost2 = parseInt(vcost2);
 let vcost1 = document.getElementById('cost1').innerText.split(": ")[1].trim();
 let pvcost1 = parseInt(vcost1)
 function nigga1() {
-  if (pvcost1 <= fL && x1 < 500) {
+  if (pvcost1 <= fL && x1 < 1000) {
     fL -= pvcost1
     pvcost1 *= 1.5;
     x1 +=1
     document.getElementById('pcrs1').innerText = x1
     document.getElementById('cost1').innerText = "Cost: " + pvcost1.toFixed(1);
     if (x1 >= xa) {
-    x *=3
+    xz *=3
     xa +=25
     
   }
@@ -218,19 +323,18 @@ starttime()
 
 let vcost3 = document.getElementById('cost3').innerText.split(": ")[1].trim();
 let pvcost3 = parseInt(vcost3)
-let z = 0.25;
 let wtr = 0;
 
 const wflid = document.getElementById('water');
 function nigga3() {
-    if (pvcost3 <= fL && w1 < 100) {
+    if (pvcost3 <= fL && w1 < 200) {
         fL -= pvcost3
         pvcost3 *= 1.8
         w1 +=1
         document.getElementById('cost3').innerText = "Cost: " + pvcost3.toFixed(1);
         document.getElementById('pcrs3').innerText = w1
         if (w1 >= wa) {
-    z *=2
+    zz *=2
     wa +=25
     }}};
 
@@ -238,28 +342,187 @@ function nigga3() {
     let pvcost4 = parseInt(vcost4)
 
     function nigga4() {
-    if (pvcost4 <= fL && e1 < 500) {
+    if (pvcost4 <= fL && e1 < 1000) {
         fL -= pvcost4
         pvcost4 *= 1.5
         e1 +=1
         document.getElementById('cost4').innerText = "Cost: " + pvcost4.toFixed(1);
         document.getElementById('pcrs4').innerText = e1
         if (e1 >= ea) {
-    u *=2
+    uz *=2
     ea +=25
   }
 
     }
 }
+let vcost5 = document.getElementById('cost5').innerText.split(": ")[1].trim();
+let pvcost5 = parseInt(vcost5);
+let s1 = 0;
+let sa = 25;
+function nigga5() {
+    if (pvcost5 <= sval && s1 < 51) {
+        sval -=1
+        s1 +=1
+        document.getElementById('pcrs5').innerText = s1
+  }
+
+    }
+let vcost6 = document.getElementById('cost6').innerText.split(": ")[1].trim();
+let pvcost6 = parseInt(vcost6);
+let s2 = 0;
+let sb = 25;
+function nigga6() {
+    if (pvcost6 <= sval && s2 < 51) {
+        sval -= 2
+        s2 +=1
+        document.getElementById('pcrs6').innerText = s2
+      
+    }
+}
+
+
 function waterpump(button) {
     if (wtr > -1) {
-        wtr += (z* ((w1+2)/2))
+        wtr += (z* ((w1+2)/2)*zz*((su1+2)/2)*(sz1))
         wflid.innerText = wtr
     }
      wflid.innerText = wtr.toFixed(2);
     }
+    let saltBD = 0;
+let saltval = 0;
+const salt = document.getElementById('salt');
+const saltpend = document.getElementById('saltpend');
+    function Salt() {
+    if ( lvalue>= 45 ) {
+        saltval+=(sv+112321)*Math.pow((lvalue/4),2).toFixed(2);
+      wtr-=wtr
+      s2-=s2
+      document.getElementById('pcrs6').innerText = 0
+      document.getElementById('pcrs5').innerText = 0
+      s1-=s1
+      sval -=sval
+      lvl.innerText= 0
+      fL-=fL
+      reqval = 100
+      saltBD +=1
+      pex = 0
+      n -=n
+      wflid.innerText = 0;
 
-    let x = 0.75;
+  }
+
+  if (saltBD >=1) {
+    
+    saltBD -=1
+    lvalue -=lvalue
+    
+  }
+    }
+
+let su1 = 0;
+let su2 = 0;
+let su3 = 0;
+let su4 = 0;
+let su5 = 0;
+
+let sz1 = 1;
+let sz2 = 1;
+let sz3 = 1;
+let sz4 = 1;
+let sz5 = 1;
+
+let sa1 = 25;
+let sa2 = 25;
+let sa3 = 25;
+let sa4 = 25;
+let sa5 = 25;
+
+let vcost1a = document.getElementById('cost1a').innerText.split(": ")[1].trim();
+let pvcost1a = parseInt(vcost1a);
+
+let vcost2a = document.getElementById('cost2a').innerText.split(": ")[1].trim();
+let pvcost2a = parseInt(vcost2a);
+
+let vcost3a = document.getElementById('cost3a').innerText.split(": ")[1].trim();
+let pvcost3a = parseInt(vcost3a);
+
+let vcost4a = document.getElementById('cost4a').innerText.split(": ")[1].trim();
+let pvcost4a = parseInt(vcost4a);
+
+let vcost5a = document.getElementById('cost5a').innerText.split(": ")[1].trim();
+let pvcost5a = parseInt(vcost5a);
+
+    function nigga1A() {
+  if (pvcost1a <= saltval && su1 < 251) {
+    saltval -= pvcost1a
+    pvcost1a *= 1.5;
+    su1 +=1
+    document.getElementById('pcrs1a').innerText = su1
+    document.getElementById('cost1a').innerText = "Cost: " + pvcost1a.toFixed(1);
+    if (su1 >= sa1) {
+    sz1*=2
+    sa1 +=25
+    
+  }
+
+    }};
+
+    function nigga2A() {
+  if (pvcost2a <= saltval && su2 < 251) {
+    saltval -= pvcost2a
+    pvcost2a *= 1.5;
+    su2 +=1
+    document.getElementById('pcrs2a').innerText = su2
+    document.getElementById('cost2a').innerText = "Cost: " + pvcost2a.toFixed(1);
+    if (su2 >= sa2) {
+    sz2*=2
+    sa2 +=25
+    
+  }
+
+    }};
+
+    function nigga3A() {
+  if (pvcost3a <= saltval && su3 < 251) {
+    saltval -= pvcost3a
+    pvcost3a *= 1.8;
+    su3 +=1
+    document.getElementById('pcrs3a').innerText = su3
+    document.getElementById('cost3a').innerText = "Cost: " + pvcost3a.toFixed(1);
+    if (su3 >= sa3) {
+    sz3*=2
+    sa3 +=25
+    
+  }
+
+    }};
+
+    function nigga4A() {
+  if (pvcost4a <= saltval && su4 < 11) {
+    saltval -= pvcost4a
+    pvcost4a *= 5;
+    y /=1.25
+    su4 +=1
+    document.getElementById('pcrs4a').innerText = su4
+    document.getElementById('cost4a').innerText = "Cost: " + pvcost4a.toFixed(1);
+    restarttime()
+    }};
+
+    function nigga5A() {
+  if (pvcost5a <= saltval && su5 < 251) {
+    saltval -= pvcost5a
+    pvcost5a *= 10;
+    su5 +=1
+    document.getElementById('pcrs5a').innerText = su5
+    document.getElementById('cost5a').innerText = "Cost: " + pvcost5a.toFixed(1);
+    if (su5 >= sa5) {
+    sz5*=2
+    sa5 +=25
+    
+  }
+
+    }};
+
 
 
 </script>
