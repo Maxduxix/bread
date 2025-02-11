@@ -4,7 +4,7 @@
 }
 .ASD {
     display: flex;
-    color: aliceblue;
+    color aliceblue;
     gap: 5px;
 }
 .FV {
@@ -20,6 +20,22 @@ body {
     color: blue;
     display: flex;
     gap: 5px;
+    
+}
+.ADE {
+    color: antiquewhite;
+    display: flex;
+    gap: 6px;
+}
+.AZE {
+    color: rgb(255, 255, 255);
+    display: flex;
+    gap: 6px;
+}
+.APE {
+    color: rgb(0, 155, 80);
+    display: flex;
+    gap: 6px;
 }
 .upg1 {
     display: flex;
@@ -58,14 +74,7 @@ button:hover {
     gap: 8px;
     font-size: 19px;
 }
-.pres {
-    text-align: center;
-    align-self: center;
-    font-size: 18px;
-    width: 150px;
-    height: 30px;
-    margin: 10px;
-}
+
 .WBG {
     display: flex;
     color: blue;
@@ -73,4 +82,11 @@ button:hover {
 }
 .hi {
     gap: 5px;
+}
+
+.salt {
+    color: rgb(0, 0, 255);
+    display: flex;
+    margin: 5px;
+    gap: 8px;
 }
